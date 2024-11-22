@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Book</title>
+    <style>
+        .heading{
+            text-align: center;
+            font-size: 40px;
+            color: black;
+            padding: 10px;
+        }
+        .by-search{
+            color: black;
+            background-color:lightcoral;
+            text-align: center;
+            margin-left: 500px;
+            padding: 20px;
+            width: 400px;
+            font-size: 20px;
+            border-radius: 5px;
+            border: solid black 2px;
+            font-family: cursive;
+        }
+        .btn{
+            text-align: center;
+            margin-left: 670px;
+            padding: 10px;
+            width: 90px;
+            margin-top: 40px;
+            cursor: pointer;
+            color: black;
+            font-size: 20px;
+            font-family: cursive;
+        }
+            
+        
+    </style>
+</head>
+<body>
+    <h1 class="heading">
+        Phone Book</h1>
+        <input type="text" id="search" placeholder="search" class="by-search"/><br>
+        <button type="button" onclick="search()" class="btn">Search</button>
+        <p id="result"></p>
+    <script>
+        const contacts = {
+            archana: "3040509911",
+            payal: "2476598643",
+            pooja: "2378560943",
+            mansi: "4578093453",
+            praju: "7458952380",
+            deepali: "8934651209",
+            nikita: "78347022386",
+            akshada: "5634128956",
+            anjli: "8945238956",
+            anuja: "56320973421",
+            divya: "542397634",
+            vidya: "4529056098",
+            janvi: "45237845096",
+            priti: "7634893489",
+            sayli: "45784589452",
+            radha: "56345784578",
+            nisha: "893463478089",
+
+        };
+        function search(){
+        const searchInput = document.getElementById("search");
+        const query = searchInput.value.toLowerCase();
+
+        const mobile = contacts[query]
+
+        const result = document.getElementById("result");
+        if(mobile){
+            result.innerText = `Mobile number of ${query} is ${mobile}`;
+        }
+        else{
+            result.innerText = `Contact not found`;
+        }
+        
+    }
+    </script>
+</body>
+</html>
